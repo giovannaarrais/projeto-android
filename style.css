@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+/* para fazer variaveis e otimizar tempo
+:root{
+    --cor0: #5g45df4g (exemplo);
+    --cor1: ;
+    ...
+
+    --fonte-padrao: arial...;
+    --fonte-destaque: 'bebas neue', ...;
+    --fonte-android: 'android', cursive; 
+    ...
+
+    e no codigo css colocar 
+    font-family: var(--fonte-padrao)
+    background-color: var(--cor2)
+    
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@font-face {
+    font-family: 'idroid';
+    src: url(fontes/idroid.otf) format(opentype);
+    font-weight: normal;
+}
+
+/*muito importante colocar antes de comecar para as margens automaticas não atrapalharem*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #C5EBD6;
+}
+
+a.externo::after{
+    content: '\00a0\1F517';
+}
+
+header{
+    background-image: linear-gradient(to bottom, #37C374,#1C623A);
+    min-height: 150px;
+    padding: 30px;
+    color: white;
+    text-align: center; /*se text-align nao funcionar errei em algo no codigo*/
+}
+
+header>h1{
+    font-family:'Bebas Neue', Times, serif, Helvetica, serif;
+    color: white;    
+    font-family: 'Bebas Neue';
+    font-weight: normal; 
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.507); /*sombra no h1*/
+}
+
+header>p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    /*responsividade*/
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.534);
+}
+
+nav{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1A5C38;
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.26);
+}
+
+nav>a{
+    color: #90d1ad;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;  
+}
+
+
+nav > a:hover{
+    background-color: #2fa865 ;
+    color: #0a2415;
+    transition-duration: 0.7s; /*tempo de transição ao passar o mouse*/
+    border-radius: 5px;
+}
+
+
+
+main{
+    background-color: white;
+    padding: 20px;
+    margin: 50px;
+    margin-top: 0;
+    box-shadow: 0 5px 5px 5px #4472584d;
+}
+
+main h1{
+    font-family: 'idroid',Arial, Helvetica, sans-serif; 
+    color: #316C4C;
+    font-weight: normal; /*deixa mais facil de ler*/
+    font-size: 30px;
+}
+
+main h2{
+    font-family: 'idroid',Arial, Helvetica, sans-serif; 
+    color: #2b5f42;
+    font-weight: normal;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #84e1ac, transparent);
+    padding-left: 10px;
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+
+main strong{
+    color: #155330;
+    font-weight: bold;
+}
+
+main a{
+    background-color: #40b374;
+    color: #0a2415;
+    font-weight: bold;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: #074d25;
+}
+
+
+main img{
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+article > p{
+    text-indent: 30px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+
+div.video{
+    background-color: #1A5C38;
+    padding: 20px;
+    margin: 0px -20px 30px -20px; /*o negatico serve para nao somar com outraa margem e sim passar por cima dela, serve para colar nas laterais*/
+    padding-bottom: 58%; /*ajuda a tirar as barras pretas laterais ao dar play no video*/
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute; /*quando tem ele posso configurar top left widht height...*/
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+aside{
+    background-color: #C5EBD6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 3px 3px 8px #1a5c3862;
+}
+
+aside > h3{
+    background-color: #2FA866;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*margin negativa, para ela nao complementar a margem q ja tem e sim ficar em cima*/
+    border-radius: 10px 10px 0 0;
+}
+
+aside > ul{
+    list-style: '\2714\00a0\00a0';
+    list-style-position: inside;
+    columns: 2;
+    
+}
+
+
+footer{
+    background-color: #1C623A;
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    background-color: #37C374;
+    padding: 5px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
